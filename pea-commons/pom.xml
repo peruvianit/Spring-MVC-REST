@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>it.peruvianit</groupId>
+    <artifactId>pea</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>pea-commons</artifactId>
+  <name>Peruvian Commons Library</name>
+  
+  <organization>
+    <name>peruvianit Freelance</name>
+  </organization>
+  
+  <licenses>
+  	<license>
+  		<name>Creative Commons.</name>
+  		<url>http://creativecommons.org</url>
+  		<comments>Creative Commons (CC) è un'organizzazione non a scopo di lucro con sede a Mountain View dedicata ad ampliare la gamma di opere disponibili alla condivisione e all'utilizzo pubblico in maniera legale.</comments>
+  	</license>
+  </licenses>
+ 
+  <profiles>
+		<profile>
+			<id>mock</id>
+			<properties>
+                <app.user>Mock</app.user>
+            </properties>            
+            <build>            	
+			    <plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<version>1.7</version>
+						<executions>
+							<execution>
+								<id>add-source</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>add-source</goal>
+								</goals>
+								<configuration>
+									<sources>
+										<source>${basedir}/src/mock/java</source>
+									</sources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+            </build>            
+			<dependencies>
+				<dependency>
+					<groupId>org.mockito</groupId>
+					<artifactId>mockito-core</artifactId>
+					<version>1.10.19</version>
+					<scope>compile</scope>
+				</dependency>
+
+				<dependency>
+					<groupId>io.github.benas</groupId>
+					<artifactId>jpopulator</artifactId>
+					<version>1.2.0</version>
+					<scope>compile</scope>
+				</dependency>
+			</dependencies>			
+		</profile>
+		<profile>
+			<id>produccion</id>
+			<properties>
+                <app.user>s.arellano</app.user>
+            </properties>            
+		</profile>
+	</profiles>
+	
+	<distributionManagement>
+		<snapshotRepository>
+			<id>peruvianit-snapshot</id>
+			<url>http://localhost:8081/repository/peruvianit-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<build>
+		<finalName>peruvianit-commons-library-${project.version.build}</finalName>
+		<resources>
+	        <resource>
+	            <filtering>true</filtering>
+	            <directory>src/main/resources</directory>
+	        </resource>
+	    </resources>
+	</build>	
+</project>
