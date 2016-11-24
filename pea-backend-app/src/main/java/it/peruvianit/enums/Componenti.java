@@ -65,12 +65,12 @@ public enum Componenti {
 	 * Constructore della classe
 	 * 
 	 * @param codice codice univoco Componente.
-	 * @return {@link Componenti} ritorna una instazia dal codice.
+	 * @return {@link TipoError} ritorna una instazia dal codice.
 	 */
 	
-	public static Componenti getInstanceFromCode(String codice){
-		Componenti instance = null;
-		for (Componenti elem : Componenti.values()){
+	public static TipoError getInstanceFromCode(String codice){
+		TipoError instance = null;
+		for (TipoError elem : TipoError.values()){
 			if (elem.getCodice().equals(codice)){
 				instance = elem;
 				break;

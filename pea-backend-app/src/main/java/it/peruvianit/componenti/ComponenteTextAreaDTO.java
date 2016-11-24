@@ -18,7 +18,7 @@ public class ComponenteTextAreaDTO extends BaseComponenteAbstract{
 	}
 
 	@Override
-	public Componenti  getTipoComponente() {
+	public Componenti getTipoComponente() {
 		return Componenti.TEXTAREA;
 	}
 }
