@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import eu.bitwalker.useragentutils.UserAgent;
+import it.peruvianit.dto.RequestDetailsDTO;
 import it.peruvianit.dto.UserDetailsDTO;
 
 public class RequestUtil {
@@ -47,6 +48,28 @@ public class RequestUtil {
 		}
 		
 		return userDetails;
+	}
+	
+	public static RequestDetailsDTO getRequestDetailsDTO(HttpServletRequest requestContext){
+		RequestDetailsDTO requestDetailsDTO = new RequestDetailsDTO();
+		
+		String ipAddressLocale = requestContext.getLocalAddr();
+		String ipAddressRemote = requestContext.getRemoteAddr();
+		String method = requestContext.getMethod();
+		String requestUri = requestContext.getRequestURI();
+		String contentType = requestContext.getHeader("content-type");
+		String reference = "-";
+		String paramsQuery = RequestUtil.captureParamsRequest(requestContext);
+		
+		requestDetailsDTO.setIpAddressLocale(ipAddressLocale);
+		requestDetailsDTO.setIpAddressRemote(ipAddressRemote);	
+		requestDetailsDTO.setMethod(method);
+		requestDetailsDTO.setRequestUri(requestUri);
+		requestDetailsDTO.setContentType(contentType);
+		requestDetailsDTO.setReference(reference);
+		requestDetailsDTO.setParamsQuery(paramsQuery);
+		
+		return requestDetailsDTO;
 	}
 	
 	public static String captureParamsRequest(HttpServletRequest requestContext){

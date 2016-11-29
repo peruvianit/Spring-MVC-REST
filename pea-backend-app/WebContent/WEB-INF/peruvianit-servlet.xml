@@ -12,13 +12,14 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="it.peruvianit.controller" />
-
+	<context:component-scan base-package="it.peruvianit.restController" />
+	
 	<mvc:annotation-driven />
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
-			<value>/WEB-INF/pages/</value>
+			<value>/jsp/</value>
 		</property>
 		<property name="suffix">
 			<value>.jsp</value>
@@ -32,4 +33,9 @@
 	<!-- JSON Support -->
     <bean name="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
     <bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+    
+    <!-- Interceptors -->
+    <mvc:interceptors>
+	        <bean class="it.peruvianit.interceptors.ExecuteTimeInterceptor" />	 		
+	</mvc:interceptors> 
 </beans>

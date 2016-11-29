@@ -13,7 +13,7 @@ import it.peruvianit.componenti.ContenitoreDTO;
 import it.peruvianit.enums.Componenti;
 import it.peruvianit.exception.PeaCoreException;
 
-public class BackEndTest {
+public class ComponentiTest {
 	@Test
 	public void CreazioneComponentiTest() {		
 		ComponenteBuilder componenteBuilder = new ComponenteBuilderImpl();

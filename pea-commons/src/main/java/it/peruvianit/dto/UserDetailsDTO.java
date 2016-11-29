@@ -20,19 +20,19 @@ public class UserDetailsDTO implements Serializable {
 	public String getUsername() {
 		return username;
 	}
-	public void setUsername(String username) {
+	public void setUsername(final String username) {
 		this.username = username;
 	}
 	public String getIpAddress() {
 		return ipAddress;
 	}
-	public void setIpAddress(String ipAddress) {
+	public void setIpAddress(final String ipAddress) {
 		this.ipAddress = ipAddress;
 	}
 	public String getMacAddress() {
 		return macAddress;
 	}
-	public void setMacAddress(String macAddress) {
+	public void setMacAddress(final String macAddress) {
 		this.macAddress = macAddress;
 	}
 	public Integer getId() {
@@ -44,37 +44,37 @@ public class UserDetailsDTO implements Serializable {
 	public String getBrowser() {
 		return browser;
 	}
-	public void setBrowser(String browser) {
+	public void setBrowser(final String browser) {
 		this.browser = browser;
 	}
 	public String getBrowserType() {
 		return browserType;
 	}
-	public void setBrowserType(String browserType) {
+	public void setBrowserType(final String browserType) {
 		this.browserType = browserType;
 	}
 	public String getBrowserVersion() {
 		return browserVersion;
 	}
-	public void setBrowserVersion(String browserVersion) {
+	public void setBrowserVersion(final String browserVersion) {
 		this.browserVersion = browserVersion;
 	}
 	public String getNameOperatingSystem() {
 		return nameOperatingSystem;
 	}
-	public void setNameOperatingSystem(String nameOperatingSystem) {
+	public void setNameOperatingSystem(final String nameOperatingSystem) {
 		this.nameOperatingSystem = nameOperatingSystem;
 	}
 	public String getDeviceType() {
 		return deviceType;
 	}
-	public void setDeviceType(String deviceType) {
+	public void setDeviceType(final String deviceType) {
 		this.deviceType = deviceType;
 	}
 	public String getManufacter() {
 		return manufacter;
 	}
-	public void setManufacter(String manufacter) {
+	public void setManufacter(final String manufacter) {
 		this.manufacter = manufacter;
 	}
 }

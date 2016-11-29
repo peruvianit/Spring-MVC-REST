@@ -17,31 +17,31 @@ public class ErrorDTO implements Serializable {
 	public UUID getUUIDError() {
 		return UUIDError;
 	}
-	public void setUUIDError(UUID uUIDError) {
+	public void setUUIDError(final UUID uUIDError) {
 		UUIDError = uUIDError;
 	}
 	public Integer getCodice() {
 		return codice;
 	}
-	public void setCodice(Integer codice) {
+	public void setCodice(final Integer codice) {
 		this.codice = codice;
 	}
 	public String getDescrizione() {
 		return descrizione;
 	}
-	public void setDescrizione(String descrizione) {
+	public void setDescrizione(final String descrizione) {
 		this.descrizione = descrizione;
 	}
 	public TipoError getTipoError() {
 		return tipoError;
 	}
-	public void setTipoError(TipoError tipoError) {
+	public void setTipoError(final TipoError tipoError) {
 		this.tipoError = tipoError;
 	}
 	public String getCausaEccezione() {
 		return causaEccezione;
 	}
-	public void setCausaEccezione(String causaEccezione) {
+	public void setCausaEccezione(final String causaEccezione) {
 		this.causaEccezione = causaEccezione;
 	}
 }
