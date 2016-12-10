@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Redirect view --> 
+	<bean id="ExcelView"
+		class="it.peruvianit.view.ExcelView">
+	</bean>
+	
+	<bean id="XlsView"
+		class="it.peruvianit.view.XlsView">
+	</bean>
+	
+	<bean id="PdfView"
+		class="it.peruvianit.view.PdfView">
+	</bean>
+	
+	<bean id="CsvView"
+		class="it.peruvianit.view.CsvView">
+	</bean>
+</beans>

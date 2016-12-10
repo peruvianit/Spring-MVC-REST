@@ -12,6 +12,7 @@ public class RequestDetailsDTO implements Serializable {
 	private String contentType;
 	private String reference;
 	private String paramsQuery;
+	private Integer statusCode;
 	
 	ExecuteTimeDTO executeTimeDTO;
 	
@@ -62,5 +63,11 @@ public class RequestDetailsDTO implements Serializable {
 	}
 	public void setExecuteTimeDTO(ExecuteTimeDTO executeTimeDTO) {
 		this.executeTimeDTO = executeTimeDTO;
+	}
+	public Integer getStatusCode() {
+		return statusCode;
+	}
+	public void setStatusCode(Integer statusCode) {
+		this.statusCode = statusCode;
 	}
 }

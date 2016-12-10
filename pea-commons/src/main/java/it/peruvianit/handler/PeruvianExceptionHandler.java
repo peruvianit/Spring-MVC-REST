@@ -35,6 +35,7 @@ public class PeruvianExceptionHandler implements HandlerExceptionResolver, Order
         } else { // a JSP style error
            mv.setViewName("error/500");
         }
+        anExc.printStackTrace();
         return mv;
     }
 }

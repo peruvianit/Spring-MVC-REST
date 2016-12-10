@@ -10,6 +10,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import it.peruvianit.dto.ExecuteTimeDTO;
 import it.peruvianit.dto.RequestDetailsDTO;
+import it.peruvianit.metrics.ExecuteQueuSingleton;
 import it.peruvianit.utils.RequestUtil;
 
 public class ExecuteTimeInterceptor extends HandlerInterceptorAdapter{
@@ -38,8 +39,8 @@ public class ExecuteTimeInterceptor extends HandlerInterceptorAdapter{
 		RequestDetailsDTO requestDetailsDTO = (RequestDetailsDTO)request.getAttribute("requestDetailsDTO");
 		requestDetailsDTO.getExecuteTimeDTO().setEndTime(System.currentTimeMillis());
 		requestDetailsDTO.getExecuteTimeDTO().setExecuteTime(requestDetailsDTO.getExecuteTimeDTO().getEndTime() - requestDetailsDTO.getExecuteTimeDTO().getStartTime());
-
-		//modificando un model esistente
-		modelAndView.addObject("requestDetailsDTO",requestDetailsDTO);
+		requestDetailsDTO.setStatusCode(response.getStatus());
+		
+		ExecuteQueuSingleton.getInstance().add(requestDetailsDTO);
 	}
 }

@@ -27,6 +27,4 @@ public class ExecuteTimeDTO implements Serializable{
 	public void setExecuteTime(final Long executeTime) {
 		this.executeTime = executeTime;
 	}
-	
-	
 }
